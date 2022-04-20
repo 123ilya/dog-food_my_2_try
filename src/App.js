@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import mockedData from "../data.json";
+import api from "./utils/api.js";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -30,12 +31,14 @@ export const App = () => {
     );
     setFoodList(filteredList);
   };
-//Как понять за каким компонентом следит useEffect
-// Компонент APP?
-useEffect(()=>{
-    console.log("UPDATE")
-    filterFoodlist(inputValue)
-},[inputValue])
+
+  useEffect(() => {}, []);
+  //Как понять за каким компонентом следит useEffect
+  // Компонент APP?
+  useEffect(() => {
+    console.log("UPDATE");
+    filterFoodlist(inputValue);
+  }, [inputValue]);
 
   return (
     <div className="appContainer">
